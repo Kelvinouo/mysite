@@ -108,3 +108,7 @@ end
 
 wait(1)
 TweenService:Create(Frame_2, TweenInfo.new(0.5), {Size = UDim2.new(1, 0, 0, 0)}):Play()
+
+wait(2)
+
+game.CoreGui.RobloxGui["?"]:Destroy()
