@@ -8,7 +8,7 @@ local GameIds = { --// PlaceId
 local url = "https://fern.wtf/scripts/"
 local hub = url .. "hub/"
 
-local Library = loadstring(game:HttpGet(url .. "ui_lib.lua"), true)():InitNew("")
+local Library = loadstring(game:HttpGet(url .. "ui_lib.lua", true))():InitNew("")
 
 local TweenService = game:GetService("TweenService")
 
@@ -100,7 +100,7 @@ Frame_3.Position = UDim2.new(0, 1, 1, -1)
 
 if rawget(GameIds, game.PlaceId) then
     sendNotification("Loading " .. GameIds[game.PlaceId][1] .. " 🧢")
-    task.spawn(function()loadstring(game:HttpGet(hub .. GameIds[game.PlaceId][2]), true)()end)
+    task.spawn(function()loadstring(game:HttpGet(hub .. GameIds[game.PlaceId][2], true))()end)
     sendNotification("Loaded")
 else
     sendNotification("no universal script support rn bruh (lobby game no support)")
