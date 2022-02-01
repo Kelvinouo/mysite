@@ -8,7 +8,9 @@ local GameIds = { --// PlaceId
 local url = "https://fern.wtf/scripts/"
 local hub = url .. "hub/"
 
-local Library = loadstring(url .. "ui_lib.lua")():InitNew("")
+local Library = loadstring(url .. "ui_lib.lua")()
+print(Library)
+Library:InitNew("")
 
 local TweenService = game:GetService("TweenService")
 
