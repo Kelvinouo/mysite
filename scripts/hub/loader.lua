@@ -6,7 +6,7 @@ local GameIds = { --// PlaceId
 }
 
 local url = "https://fern.wtf/scripts/"
-local hub = url .. "url/"
+local hub = url .. "hub/"
 
 local Library = loadstring(url .. "ui_lib.lua")():InitNew("")
 
