@@ -103,7 +103,7 @@ if rawget(GameIds, game.PlaceId) then
     task.spawn(function()loadstring(game:HttpGet(hub .. GameIds[game.PlaceId][2], true))()end)
     sendNotification("Loaded")
 else
-    sendNotification("no universal script support rn bruh (lobby game no support)")
+    sendNotification("no universal script rn :(")
 end
 
 wait(1)
