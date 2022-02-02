@@ -4,19 +4,39 @@ local GameIds = { --// PlaceId
     [8592115909] = {"Skywars", "skywar.lua"}, -- Party (dou)
 
 }
-
 local url = "https://fern.wtf/scripts/"
 local hub = url .. "hub/"
 
 local Library = loadstring(game:HttpGet(url .. "ui_lib.lua", true))():InitNew("")
 
 local TweenService = game:GetService("TweenService")
+local HttpService = game:GetService("HttpService")
+
+local FOLDERNAME = "Fern Hub"
+local PREFIX = ".fern"
+local CONFIGPATH = FOLDERNAME .. "/config" .. PREFIX
 
 function sendNotification(message, debug)
     Library:SendNotification(debug and ("[DEBUG] "..message) or message, debug and Color3.fromRGB(6, 255, 118) or nil)
 end
 
 sendNotification("Loading...")
+
+function saveConfig(t)
+    writefile(CONFIGPATH, HttpService:JSONEncode(t))
+end
+
+function loadConfig()
+    return HttpService:JSONDecode(readfile(CONFIGPATH))[tostring(game.PlaceId)]
+end
+
+if not isfolder(FOLDERNAME) then
+    makefolder(FOLDERNAME)
+end
+
+if not isfile(CONFIGPATH) then
+    writefile(CONFIGPATH, HttpService:JSONEncode({}))
+end
 
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -88,7 +108,8 @@ Back.ZIndex = 0
 UICorner_3.CornerRadius = UDim.new(0, 4)
 UICorner_3.Parent = Back
 
---// TweenGUI
+
+--// stuffs
 TweenService:Create(Frame_2, TweenInfo.new(0.5), {Size = UDim2.new(1, 0, 1, 0)}):Play()
 wait(1.5)
 
@@ -105,11 +126,12 @@ if rawget(GameIds, game.PlaceId) then
 else
     sendNotification("no universal script rn :(")
     task.spawn(function()
-        wait(3)
+        wait(6)
         game.CoreGui.RobloxGui["?"]:Destroy()
     end)
 end
 
 wait(1)
 TweenService:Create(Frame_2, TweenInfo.new(0.5), {Size = UDim2.new(1, 0, 0, 0)}):Play()
+wait(0.5)
 ScreenGui:Destroy()
