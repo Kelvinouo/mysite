@@ -134,5 +134,6 @@ else
         game.CoreGui.RobloxGui["?"]:Destroy()
     end)
 end
+
 wait(0.5)
 ScreenGui:Destroy()
