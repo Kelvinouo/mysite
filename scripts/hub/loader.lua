@@ -50,6 +50,7 @@ local Back = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
 
 ScreenGui.Parent = game.CoreGui.RobloxGui
+ScreenGui.DisplayOrder = 9e9
 
 Frame.Parent = ScreenGui
 Frame.AnchorPoint = Vector2.new(0.5, 0.5)
