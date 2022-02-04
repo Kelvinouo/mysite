@@ -120,6 +120,9 @@ Frame_2.Position = UDim2.new(0, 0, 1, 0)
 Frame_3.AnchorPoint = Vector2.new(0, 1)
 Frame_3.Position = UDim2.new(0, 1, 1, -1)
 
+wait(1)
+TweenService:Create(Frame_2, TweenInfo.new(0.5), {Size = UDim2.new(1, 0, 0, 0)}):Play()
+
 if rawget(GameIds, game.PlaceId) then
     sendNotification("Loading " .. GameIds[game.PlaceId][1] .. " 🧢")
     task.spawn(function()loadstring(game:HttpGet(hub .. GameIds[game.PlaceId][2], true))()end)
@@ -131,8 +134,5 @@ else
         game.CoreGui.RobloxGui["?"]:Destroy()
     end)
 end
-
-wait(1)
-TweenService:Create(Frame_2, TweenInfo.new(0.5), {Size = UDim2.new(1, 0, 0, 0)}):Play()
 wait(0.5)
 ScreenGui:Destroy()
