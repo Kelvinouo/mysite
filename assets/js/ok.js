@@ -43,6 +43,7 @@
                 {
                     strings: app.Texts,
                     typeSpeed: 25,
+                    startDelay: 1000,
                 });
         }, 1350);
 
