@@ -1,22 +1,14 @@
 .bmain {
   z-index: -2;
-  position: fixed;
   top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  transform: translateX(-50%) translateY(-50%);
   background-color: #000;
 }
 
 .navbar {
   visibility: hidden;
-}
-
-.startthing {
-  position: absolute;
-  top: 0;
-  right: 5px;
 }
 
 .main {
@@ -35,12 +27,12 @@
 
 .Brand {
   height: 50%;
-  width: 40%;
+  width: 80%;
   margin: auto;
 }
 
 .Paragraph {
-  max-width: 70%;
+  max-width: 60%;
   margin: 0 auto;
   text-align: center!important;
   color: #fff;
