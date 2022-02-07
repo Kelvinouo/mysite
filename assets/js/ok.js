@@ -42,8 +42,11 @@
             var typed = new Typed("#Bruh",
                 {
                     strings: app.Texts,
-                    typeSpeed: 25,
-                    startDelay: 1000,
+                    typeSpeed: 40,
+                    backDelay: 500,
+                    onComplete: function() {
+                        return $("span").siblings(".typed-cursor").css("opacity", "0");
+                    }
                 });
         }, 1350);
 
