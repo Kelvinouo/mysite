@@ -1,7 +1,8 @@
 local GameIds = { --// PlaceId
     --// Skywars
-    [8542275097] = {"Skywars", "skywar.lua"}, -- Solo
-    [8592115909] = {"Skywars", "skywar.lua"}, -- Party (dou)
+    [8542275097] = {"Skywars", "skywars.lua"}, -- Solo
+    [8592115909] = {"Skywars", "skywars.lua"}, -- Party (dou)
+    [8768229691] = {"Skywars", "skywars.lua"}, -- Custom
 
 }
 local url = "https://fern.wtf/scripts/"
