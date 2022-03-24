@@ -1,11 +1,6 @@
 .bmain {
   z-index: -2;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  position: fixed;
-  transform: translateX(-50%) translateY(-50%);
+  margin: auto;
   background-color: #000;
 }
 
